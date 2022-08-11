@@ -34,14 +34,20 @@ struct ContentView: View {
                     .onTapGesture{
                  if (Double(finalgrade) ?? 0) >= 90 { gradedes = "امتياز"
                  }
-                        else if (Double(finalgrade) ?? 0) <= 89 {
+                        else if (Double(finalgrade) ?? 0) >= 80 {
                             gradedes = "جيد جداً"
                         }
+                       else if (Double(finalgrade) ?? 0) >= 60 {
+                            gradedes = "مقبول"
+                        }
+                        else if (Double(finalgrade) ?? 0) <= 50 {
+                             gradedes = "راسب"
+                         }
                     }
                 Text("لقد حصلت على درجه")
-                
                 Spacer()
                 Text(gradedes)
+                    .font(.largeTitle)
             } .padding()
                         
         
